@@ -23,7 +23,7 @@
            IF WS-OPCAO EQUAL 1
                DISPLAY '***********************************************'
                DISPLAY 'A - INCLUIR | B - CONSULTAR | C - EXCLUIR '
-               DISPLAY 'ESCOLHA A OPERACAO'
+               DISPLAY 'ESCOLHA A OPERACAO:'
                ACCEPT WS-OPERACAO
 
                EVALUATE WS-OPERACAO
@@ -32,9 +32,11 @@
                    WHEN 'C' DISPLAY 'ENTRANDO NA OP. C'
                    WHEN OTHER DISPLAY 'OP. INVALIDA'
                END-EVALUATE
-           ELSE
+           ELSE IF WS-OPCAO EQUAL 2
                DISPLAY 'SAINDO...'
                EXIT PROGRAM
+           ELSE
+               PERFORM MAIN-PROCEDURE
            END-IF
 
            STOP RUN.
