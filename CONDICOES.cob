@@ -20,7 +20,9 @@
            DISPLAY 'ESCOLHA A OPCAO:'
            ACCEPT WS-OPCAO
 
-           IF WS-OPCAO EQUAL 1
+           IF WS-OPCAO NOT EQUAL 1 AND 2
+               PERFORM MAIN-PROCEDURE
+           ELSE IF WS-OPCAO EQUAL 1
                DISPLAY '***********************************************'
                DISPLAY 'A - INCLUIR | B - CONSULTAR | C - EXCLUIR '
                DISPLAY 'ESCOLHA A OPERACAO:'
@@ -35,8 +37,6 @@
            ELSE IF WS-OPCAO EQUAL 2
                DISPLAY 'SAINDO...'
                EXIT PROGRAM
-           ELSE
-               PERFORM MAIN-PROCEDURE
            END-IF
 
            STOP RUN.
